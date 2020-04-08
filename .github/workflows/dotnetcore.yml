@@ -23,11 +23,8 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test and generate coverage report (lcov format)
       run: |
-        printenv
         cd ./tests/coverlet-library-unittests/
         dotnet test /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov --no-restore
-        cd TestResults/
-        cat coverage.info 
     - name: Publish coverage report to coveralls.io
       uses: coverallsapp/github-action@v1.0.1
       with:

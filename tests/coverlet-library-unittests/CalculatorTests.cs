@@ -60,5 +60,17 @@ namespace coverlet_library_unittests
             // Assert
             Assert.Equal(expected, actual);
         }
+
+        [Theory]
+        [InlineData(42, 1, 42)]
+        [InlineData(0, 42, 0)]
+        [InlineData(-1, 42, -42)]
+        public void Multiplication(decimal x, decimal y, decimal expected)
+        {
+            // Arrange
+            // Act
+            // Assert
+            Assert.Equal(expected, _target.Multiplication(x, y));
+        }
     }
 }

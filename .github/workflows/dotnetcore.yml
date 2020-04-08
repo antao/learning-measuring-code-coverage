@@ -26,5 +26,5 @@ jobs:
     - name: Publish coverage report to coveralls.io
       uses: coverallsapp/github-action@v1.0.1
       with:
-        path-to-lcov: TestResults/coverage.info 
+        path-to-lcov: ./TestResults/coverage.info 
         github-token: ${{ secrets.GITHUB }}

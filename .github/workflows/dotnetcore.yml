@@ -27,4 +27,3 @@ jobs:
       uses: coverallsapp/github-action@v1.0.1
       with:
         github-token: ${{ secrets.GITHUB }}
-        path-to-lcov: ./tests/coverlet-library-unittests/TestResults/coverage.info   

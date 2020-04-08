@@ -2,7 +2,7 @@ using System;
 using coverlet_library_sample;
 using Xunit;
 
-namespace coverlet_libraby_unittests
+namespace coverlet_library_unittests
 {
     public class CalculatorTests
     {

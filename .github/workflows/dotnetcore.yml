@@ -31,5 +31,5 @@ jobs:
     - name: Publish coverage report to coveralls.io
       uses: coverallsapp/github-action@v1.0.1
       with:
-        path-to-lcov: ./tests/coverlet-library-unittests/TestResults/coverage.info 
-        github-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        path-to-lcov: ./tests/coverlet-library-unittests/TestResults/coverage.info
+        github-token: ${{ secrets.REPO_TOKEN }}

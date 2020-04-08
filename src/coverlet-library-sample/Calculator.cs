@@ -34,5 +34,16 @@
         {
             return x - y;
         }
+
+        /// <summary>
+        /// Multiplication method represents adding a number (the multiplicand) to itself a specified number of times, it is a basic arithmetic operation.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public decimal Multiplication(decimal x, decimal y)
+        {
+            return x * y;
+        }
     }
 }

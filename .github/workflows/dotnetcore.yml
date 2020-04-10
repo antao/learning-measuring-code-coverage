@@ -30,14 +30,9 @@ jobs:
       with:
         path-to-lcov: ./tests/coverlet-library-unittests/TestResults/coverage.info
         github-token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Setup sonarqube
-      uses: warchant/setup-sonar-scanner@v1
-    - name: Run sonarqube
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@v1.1
       env:
-        # to get access to secrets.SONAR_TOKEN, provide GITHUB_TOKEN
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: sonar-scanner
-           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-           -Dsonar.organization=antao
-           -Dsonar.host.url=https://sonarcloud.io/
-           -Dsonar.projectKey=learning-measuring-code-coverage
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+     

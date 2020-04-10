@@ -24,12 +24,7 @@ jobs:
     - name: Test and generate coverage report (lcov format)
       run: |
         cd ./tests/coverlet-library-unittests/
-        dotnet test /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov --no-restore
-    - name: Publish coverage report to coveralls.io
-      uses: coverallsapp/github-action@v1.0.1
-      with:
-        path-to-lcov: ./tests/coverlet-library-unittests/TestResults/coverage.info
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        dotnet test /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=cobertura --no-restore
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.1
       env:

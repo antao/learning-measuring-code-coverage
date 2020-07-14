@@ -20,18 +20,12 @@ jobs:
     - name: Restore
       run: dotnet restore
     - name: Build
-      run: dotnet build 
-        --configuration Release 
-        --no-restore
+      run: dotnet build --configuration Release --no-restore
     - name: Test and generate coverage data report (lcov format)
       run: |
         printenv
         cd ./tests/coverlet-library-unittests/
-        dotnet test 
-            /p:CollectCoverage=true 
-            /p:CoverletOutput=BuildReports/Coverage/ 
-            /p:CoverletOutputFormat=lcov 
-            --no-restore
+        dotnet test /p:CollectCoverage=true /p:CoverletOutput=BuildReports/Coverage/ /p:CoverletOutputFormat=lcov --no-restore
         cd BuildReports/Coverage/
         cat coverage.info 
     - name: Publish coverage report to coveralls.io

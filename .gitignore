@@ -364,3 +364,4 @@ OpenCover/
 
 # Local development settings
 **/appsettings.Development.json
+BuildReports/
